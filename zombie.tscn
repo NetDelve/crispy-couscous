@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4jvd2he4nvfw"]
+
+[ext_resource type="Script" path="res://zombie.gd" id="1_6aaqj"]
+
+[sub_resource type="Gradient" id="Gradient_6f6or"]
+colors = PackedColorArray(0.203922, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ew4di"]
+gradient = SubResource("Gradient_6f6or")
+width = 32
+height = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxg7p"]
+size = Vector2(32, 32)
+
+[node name="Zombie" type="CharacterBody2D"]
+script = ExtResource("1_6aaqj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_ew4di")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xxg7p")
